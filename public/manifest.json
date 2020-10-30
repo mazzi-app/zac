@@ -1,0 +1,18 @@
+{
+    "short_name": "ZAC",
+    "name": "ZAC MINING, Уул уурхайн үндэсний олборлогч",
+    "start_url": ".",
+    "theme_color": "#fe982f",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "prefer_related_applications": true,
+    "related_applications": [
+        {
+            "platform": "mining",
+            "id": "mn.zac.mining"
+        }
+    ],
+    "permissions": [
+        "notifications"
+    ]
+}

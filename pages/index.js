@@ -1,209 +1,136 @@
 import Head from 'next/head'
+import { Header } from '../layouts/Header'
+import { Slider } from '../components/Slider'
+import { Fragment } from 'react'
+import { About } from '../components/About'
+import { Service } from '../components/Service'
+import { Footer } from '../layouts/Footer'
 
-export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+class Home extends React.Component {
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+  componentDidMount() {
+    $("#rev_slider_5_1").show().revolution({
+      sliderType: "standard",
+      sliderLayout: "auto",
+      dottedOverlay: "none",
+      delay: 9000,
+      navigation: {
+        keyboardNavigation: "off",
+        keyboard_direction: "horizontal",
+        mouseScrollNavigation: "off",
+        mouseScrollReverse: "default",
+        onHoverStop: "off",
+        touch: {
+          touchenabled: "on",
+          swipe_threshold: 75,
+          swipe_min_touches: 1,
+          swipe_direction: "horizontal",
+          drag_block_vertical: false
         }
-
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
+        ,
+        arrows: {
+          style: "zeus",
+          enable: true,
+          hide_under: 991,
+          hide_onleave: true,
+          tmp: '',
+          left: {
+            h_align: "left",
+            v_align: "center",
+            h_offset: 20,
+            v_offset: 0
+          },
+          right: {
+            h_align: "right",
+            v_align: "center",
+            h_offset: 20,
+            v_offset: 0
           }
         }
-      `}</style>
+      },
+      viewPort: {
+        enable: true,
+        outof: "pause",
+        visible_area: "100%",
+        presize: false
+      },
+      responsiveLevels: [1240, 1024, 778, 480],
+      visibilityLevels: [1240, 1024, 778, 480],
+      gridwidth: [1240, 1024, 778, 480],
+      gridheight: [700, 700, 480, 360],
+      lazyType: "none",
+      parallax: {
+        type: "mouse",
+        origo: "slidercenter",
+        speed: 2000,
+        levels: [2, 3, 4, 5, 6, 7, 12, 16, 10, 50, 46, 47, 48, 49, 50, 55],
+        type: "mouse",
+      },
+      shadow: 0,
+      spinner: "off",
+      stopLoop: "off",
+      stopAfterLoops: -1,
+      stopAtSlide: -1,
+      shuffle: "off",
+      autoHeight: "off",
+      disableProgressBar: "on",
+      hideThumbsOnMobile: "off",
+      hideSliderAtLimit: 0,
+      hideCaptionAtLimit: 0,
+      hideAllCaptionAtLilmit: 0,
+      debugMode: false,
+      fallbacks: {
+        simplifyAll: "off",
+        nextSlideOnWindowFocus: "off",
+        disableFocusListener: false,
+      }
+    });
 
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
+    this.addMainjs()
+  }
 
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-    </div>
-  )
+  addMainjs() {
+    const script = document.createElement("script");
+    script.src = "js/main.js"
+    script.async = true;
+    document.body.appendChild(script);
+  }
+
+  render() {
+    return (
+      <Fragment>
+        <Head>
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="height=device-height,  width=device-width, initial-scale=1,  minimum-scale=1" />
+          <meta name="description" content="ZAC MINING, Уул уурхайн үндэсний олборлогч" />
+          <meta name="msapplication-TileColor" content="#0a0a0a" />
+          <meta name="theme-color" content="#fe982f" />
+          <link rel="manifest" href="manifest.json" />
+          <meta charSet="utf-8" />
+          <meta property="og:url" content="https://zac.mn/" />
+
+          <title> Zac.mn - Уул уурхайн үндэсний олборлогч </title>
+
+          <link rel="shortcut icon" href="images/favicon.png" />
+          <link rel="stylesheet" type="text/css" href="css/fontello.css" media="all" />
+          <link rel="stylesheet" type="text/css" href="revolution/css/layers.css" media="all" />
+          <link rel="stylesheet" type="text/css" href="revolution/css/settings.css" media="all" />
+
+        </Head>
+        <div className="page">
+          <Header />
+          <Slider />
+          <main className="site-main">
+            <About />
+            <Service />
+          </main>
+          <Footer />
+        </div>
+
+
+      </Fragment>
+    )
+  }
 }
+
+export default Home;
